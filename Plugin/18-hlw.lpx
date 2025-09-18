@@ -1,22 +1,23 @@
 #!name = 黑料网🔞
-#!desc = 精简去广告，监控hostname。定时脚本为作者更新插件使用，不必理会
+#!desc = 精简去广告，监控hostname
+定时脚本为作者更新插件使用，不必理会
 #!openUrl = https://155.fun
 #!homepage=
 #!author= fishdown
 #!icon = https://raw.githubusercontent.com/fishdown/Icon/master/app/fishdown.png
 #!tag = 18
-#!date = 2025-09-18 08:00
+#!date = 2025-09-18 15:30
 
 [Argument]
 open= switch,false,tag=脚本开关,desc=默认关闭
 cronno = input,"0 8,16 * * *",tag=Cron,desc=cron表达式
 
 [MitM]
-hostname = tyv1u.zjxfrgk.xyz,xrnwd.zexsdnc.xyz,hwd70.cc,d3ig9todjb66g6.cloudfront.net,heiliao.com
+hostname = y62c5.cbghgti.xyz,5sjg4.xmjcbkk.xyz,hwd70.cc,d3ig9todjb66g6.cloudfront.net,heiliao.com
 
 [Rewrite]
 
-^https?:\/\/(?:tyv1u\.zjxfrgk\.xyz|xrnwd\.zexsdnc\.xyz|hwd70\.cc|d3ig9todjb66g6\.cloudfront\.net|heiliao\.com)(?![^\s]*\.(?:js|css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ response-body-replace-regex </head> </head><style>.addbox,.gotoclick,.list-sec-top,blockquote,.relation,.list-sec,.infomation,.common,.footer,.line,.article-tags,.a2a_kit,.title-image,.slider-banners{display:none!important}</style>
+^https?:\/\/(?:y62c5\.cbghgti\.xyz|5sjg4\.xmjcbkk\.xyz|hwd70\.cc|d3ig9todjb66g6\.cloudfront\.net|heiliao\.com)(?![^\s]*\.(?:js|css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ response-body-replace-regex </head> </head><style>.addbox,.gotoclick,.list-sec-top,blockquote,.relation,.list-sec,.infomation,.common,.footer,.line,.article-tags,.a2a_kit,.title-image,.slider-banners{display:none!important}</style>
 
 [Script]
 cron {cronno} script-path=18-hlw.js, timeout=60, img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/hlw.png,enable={open}, tag=刷新插件
