@@ -6,58 +6,6 @@
     "repo": "",
     "apps": [
         {
-            "id": "fuyouhui135",
-            "name": "复游会135",
-            "keys": [
-                "ThomasCook_Cookie"
-            ],
-            "descs_html": [],
-            "settings": [
-                {
-                    "id": "ThomasCook_Cookie",
-                    "name": "ThomasCook_Cookie",
-                    "val": "",
-                    "type": "textarea",
-                    "autoGrow": true,
-                    "rows": 6,
-                    "desc": ""
-                }
-            ],
-            "author": "",
-            "repo": "",
-            "script": "",
-            "icons": [
-                "https://raw.githubusercontent.com/fishdown/Icon/master/app/fuyouhui.png",
-                "https://raw.githubusercontent.com/fishdown/Icon/master/app/fuyouhui.png"
-            ]
-        },
-        {
-            "id": "fuyouhui175",
-            "name": "复游会175",
-            "keys": [
-                "ThomasCook_Cookie1"
-            ],
-            "descs_html": [],
-            "settings": [
-                {
-                    "id": "ThomasCook_Cookie1",
-                    "name": "ThomasCook_Cookie1",
-                    "val": "",
-                    "type": "textarea",
-                    "autoGrow": true,
-                    "rows": 6,
-                    "desc": ""
-                }
-            ],
-            "author": "",
-            "repo": "",
-            "script": "",
-            "icons": [
-                "https://raw.githubusercontent.com/fishdown/Icon/master/app/fuyouhui.png",
-                "https://raw.githubusercontent.com/fishdown/Icon/master/app/fuyouhui.png"
-            ]
-        },
-        {
             "id": "wps",
             "name": "WPS",
             "keys": [
@@ -111,5 +59,6 @@
         }
     ]
 }
+
 
 
