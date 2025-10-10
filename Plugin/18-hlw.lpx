@@ -5,18 +5,18 @@
 #!author= fishdown
 #!icon = https://raw.githubusercontent.com/fishdown/Icon/master/app/fishdown.png
 #!tag = 18
-#!date = 2025-10-10 08:00
+#!date = 2025-10-10 16:00
 
 [Argument]
 open= switch,false,tag=脚本开关,desc=默认关闭
 cronno = input,"0 8,16 * * *",tag=Cron,desc=cron表达式
 
 [MitM]
-hostname = fxrc5.lknztjh.cc,86mfs.lgizoeed.com,hwd80.cc,hwd81.cc,d3ig9todjb66g6.cloudfront.net,heiliao.com
+hostname = sqa3r.pbqxpkr.xyz,ct6ga.lkrakywo.xyz,hwd80.cc,hwd81.cc,d3ig9todjb66g6.cloudfront.net,heiliao.com
 
 [Rewrite]
 
-^https?:\/\/(?:fxrc5\.lknztjh\.cc|86mfs\.lgizoeed\.com|hwd80\.cc|hwd81\.cc|d3ig9todjb66g6\.cloudfront\.net|heiliao\.com)(?![^\s]*\.(?:js|css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ response-body-replace-regex </head> </head><style>.addbox,.gotoclick,.list-sec-top,blockquote,.relation,.list-sec,.infomation,.common,.footer,.line,.article-tags,.a2a_kit,.title-image,.slider-banners{display:none!important}</style>
+^https?:\/\/(?:sqa3r\.pbqxpkr\.xyz|ct6ga\.lkrakywo\.xyz|hwd80\.cc|hwd81\.cc|d3ig9todjb66g6\.cloudfront\.net|heiliao\.com)(?![^\s]*\.(?:js|css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ response-body-replace-regex </head> </head><style>.addbox,.gotoclick,.list-sec-top,blockquote,.relation,.list-sec,.infomation,.common,.footer,.line,.article-tags,.a2a_kit,.title-image,.slider-banners{display:none!important}</style>
 
 [Script]
 cron {cronno} script-path=18-hlw.js, timeout=60, img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/hlw.png,enable={open}, tag=刷新插件
