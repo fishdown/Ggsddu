@@ -5,7 +5,7 @@
 #!author= fishdown
 #!icon = https://raw.githubusercontent.com/fishdown/Icon/master/app/fishdown.png
 #!tag = 18
-#!date = 2025-10-22 20:16
+#!date = 2025-10-22 20:17
 
 [Argument]
 open= switch,false,tag=脚本开关,desc=默认关闭
