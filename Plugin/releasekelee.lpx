@@ -1,11 +1,11 @@
-#!name= 解除kelee资源预览限制
-#!desc= 一般好用
+#!name= 解除一些资源预览限制
+#!desc= 自用
 #!author= fishdown
 #!openUrl = 
 #!homepage= 
 #!icon= https://raw.githubusercontent.com/fishdown/Icon/master/app/fishdown.png
 #!tag = 
-#!date=2025-09-08
+#!date=2025-11-29
 
 [Argument]
 
@@ -15,7 +15,8 @@
 (?i)^https:\/\/([0-9a-z]+\.)?kelee\.one response-header-replace Content-Type text/plain;charset=utf-8
 (?i)^https:\/\/([0-9a-z]+\.)?kelee\.one header-replace User-Agent script-hub/1.0.0
 
+^https:\/\/ddgksf2013\.top header-replace user-agent Quantumult\x20X/1.5.4(iPhone17,1;\x20iOS\x2026.1)
 [script]
 
 [mitm]
-hostname= rule.kelee.one,kelee.one
+hostname= rule.kelee.one,kelee.one,ddgksf2013.top
