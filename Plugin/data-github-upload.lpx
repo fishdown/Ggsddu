@@ -3,7 +3,7 @@
 #!openUrl = 
 #!icon = https://raw.githubusercontent.com/fishdown/Icon/master/app/github.png
 #!author=fishdown
-#!date=2025-09-16
+#!date=2025-11-29
 
 [Argument]
 text = input,"",tag=插件文本,desc=输入要上传的完整文本，支持换行
