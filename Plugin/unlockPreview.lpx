@@ -1,0 +1,26 @@
+#!name= 解除一些资源预览限制
+#!desc= 自用
+#!author= fishdown
+#!openUrl = 
+#!homepage= 
+#!icon= https://raw.githubusercontent.com/fishdown/Icon/master/app/fishdown.png
+#!tag = 
+#!date=2025-12-18
+
+[Argument]
+
+[rule]
+
+[rewrite]
+# > 解除 墨鱼 资源预览限制
+^https:\/\/ddgksf2013\.top[^\s]*\.js$ header-replace user-agent Quantumult\x20X
+
+# > 解除 kelee 资源预览限制
+(?i)^https:\/\/([0-9a-z]+\.)?kelee\.one(?![^\s]*\.(?:css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ response-header-replace Content-Type text/plain;charset=utf-8
+(?i)^https:\/\/([0-9a-z]+\.)?kelee\.one(?![^\s]*\.(?:css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ header-replace User-Agent script-hub/1.0.0
+
+# > 解除 N*+% 资源预览限制
+^https:\/\/he2o\.vercel\.app\/Resource response-header-replace content-type application/javascript;charset=utf-8
+
+[mitm]
+hostname= rule.kelee.one,kelee.one,ddgksf2013.top,he2o.vercel.app
