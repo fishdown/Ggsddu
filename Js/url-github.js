@@ -8,7 +8,8 @@
 
 
 # > GitHub仓库提取
-# > hostname=github.com,raw.githubusercontent.com,api.github.com
+
+hostname=github.com,raw.githubusercontent.com,api.github.com
 
 http-request ^https?:\/\/(github|raw\.githubusercontent|api\.github)\.com script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/master/Js/url-github.js, requires-body=true, timeout=60 ,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/github.png, enable={open},tag=GitHub仓库
 
