@@ -1,7 +1,7 @@
 #!name = CC直播去广告
 #!desc = 精简，去广告。有问题清除缓存重启app，支持app版本：4.0.8.99529
 #!openUrl = 
-#!author = 鱼安
+#!author = fishdown[https://github.com/fishdown/Ggsddu]
 #!tag = 去广告
 #!system = 
 #!system_version = 
@@ -45,3 +45,4 @@
 
 [Mitm]
 hostname = cc.res.netease.com,appapi.cc.163.com,api.cc.163.com,cc.fp.ps.netease
+
