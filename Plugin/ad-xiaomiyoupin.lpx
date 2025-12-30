@@ -1,10 +1,10 @@
 #!name = 小米去广告
-#!desc = 小米有品/小米商城，精简，去广告
+#!desc = 小米商城/小米有品，精简，去广告
 #!openUrl = 
 #!author= fishdown[https://github.com/fishdown/Ggsddu]
-#!icon = https://raw.githubusercontent.com/fishdown/Icon/master/app/xmyp.png
+#!icon = https://raw.githubusercontent.com/fishdown/Icon/master/app/xiaomi.png
 #!tag = 去广告
-#!date = 2025-08-22
+#!date = 2025-12-31
 
 [Mitm]
 hostname = shopapi.io.mi.com,api.m.mi.com,shop-api.retail.mi.com
@@ -38,5 +38,8 @@ https://shopapi.io.mi.com/homepage/main/v1005 response-body-json-jq '(.data.home
 ^https:\/\/api\.m\.mi\.com\/v1\/home\/page_feed reject-dict
 # 我的页面中间banner
 ^https:\/\/shop-api\.retail\.mi\.com\/mtop\/mf\/usercenter\/personalHome response-body-json-jq 'del(.data.carouselAD)'
+# 我的页面右下角挂件
+^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/ucenter\/pendant reject-dict
 # 开屏广告
 ^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/mishop\/splash reject-dict
+
