@@ -13,7 +13,7 @@ hostname = shopapi.io.mi.com,api.m.mi.com,shop-api.retail.mi.com
 # 小米有品
 # tab栏中间AI、首页快捷icon下面广告
 # '(.data.homepage.floors) |= map(select(.floor_id != 305150))' 
-https://shopapi.io.mi.com/homepage/main/v1005 response-body-json-jq '(.data.homepage.floors) |= map(select(.floor_id != 327922))'
+https://shopapi.io.mi.com/homepage/main/v1005 response-body-json-jq '(.data.homepage.floors) |= map(select(.floor_id != 305150))'
 # 商品详情页页面最底部你可能喜欢
 ^https:\/\/shopapi\.io\.mi\.com\/mtop\/arch\/detail\/composeTwo reject-dict
 ^https:\/\/shopapi\.io\.mi\.com\/api\/gateway\/detail response-body-json-jq 'del(.data.operation)'
