@@ -29,6 +29,8 @@ https://shopapi.io.mi.com/homepage/main/v1005 response-body-json-jq '(.data.home
 ^https:\/\/shopapi\.io\.mi\.com\/mtop\/arch\/metis\/personalRec reject-dict
 # 我的页面中间滚动横幅
 ^https:\/\/shopapi\.io\.mi\.com\/mtop\/market\/usercenter\/detail\/v1002 response-body-json-jq 'del(.data.floors[] | select(.floorKey == "BANNER"))'
+# 开屏广告
+^https:\/\/shopapi\.io\.mi\.com\/mtop\/mf\/resource\/homePage\/pageConfig response-body-json-del data.splashConfigs
 
 # 小米商城
 # ^https:\/\/shop-api\.retail\.mi\.com\/mtop\/mf\/category\/categoryHome reject-dict
