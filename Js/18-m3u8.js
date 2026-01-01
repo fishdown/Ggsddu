@@ -4,13 +4,15 @@ loon
 
 抓取m3u8地址
 
-Safari,SenPlayer,MKVPiP
+插件ui页面填写Scheme
 
 Scheme示例：
+- Safari：
+留空就行
+- SenPlayer：
 SenPlayer://x-callback-url/play?url=
+- MKVPiP
 mkvpipurl://
-
-插件ui页面填写scheme，空白跳转safari
 
 */
 
