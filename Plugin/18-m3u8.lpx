@@ -10,11 +10,12 @@ http-request (?i)m3u8 script-path=https://raw.githubusercontent.com/fishdown/Ggs
 sch = input,"mkvpipurl://",tag=输入完整scheme,desc=
 
 [MitM]
-hostname = d1w3p997s8acw6.cloudfront.net
+hostname = *.cloudfront.net
 
 
 
 # 萝莉岛 d1w3p997s8acw6.cloudfront.net
+
 
 
 
