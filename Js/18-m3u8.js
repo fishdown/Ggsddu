@@ -10,12 +10,10 @@ Scheme示例：
 SenPlayer://x-callback-url/play?url=
 mkvpipurl://
 
+插件ui页面填写scheme，空白跳转safari
+
 */
 
-/**
- * Loon http-request Script
- * 功能：捕获 m3u8 请求，通过 scheme 跳转播放器（防重复通知）
- */
 
 // 当前请求 URL
 const reqUrl = $request.url;
