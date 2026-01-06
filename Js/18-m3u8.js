@@ -38,7 +38,7 @@ const lastUrl = $persistentStore.read(cacheKey);
 
 // 防止重复通知
 if (lastUrl === reqUrl) {
-  console.log("地址重复不通知";
+  console.log("地址重复不通知");
   $done({});
   return;
 }
