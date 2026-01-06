@@ -22,7 +22,7 @@ const reqUrl = $request.url;
 
 // 仅处理 m3u8
 if (!reqUrl || !/\.m3u8(\?|$)/i.test(reqUrl)) {
-  console.log("请求地址m3u8";
+  console.log("请求地址非m3u8");
   $done({});
   return;
 }
