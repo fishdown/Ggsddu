@@ -1,16 +1,28 @@
 /*
+#!name = 抓取m3u8地址porn
+#!desc = 自行添加hostname，为了防止频发通知，同一个视频连续打开第二次不会通知
+#!author = fishdown[https://github.com/fishdown/Ggsddu]
+#!icon = https://raw.githubusercontent.com/fishdown/Icon/refs/heads/master/app/porn.png
 
-loon
+[Script]
+http-request (?i)m3u8 script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/18-m3u8.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/porn.png,  tag = 抓取m3u8, argument=[{sch}]
 
-抓取m3u8地址
+[Argument]
+sch = input,"mkvpipurl://",tag=输入完整scheme,desc=
+
+[MitM]
+hostname = *.cloudfront.net,long.gfuhubh.cn
+
+# 萝莉岛 d1w3p997s8acw6.cloudfront.net
+# 妻友社区 d10cvfvt18g9rw.cloudfront.net
+# 50度灰 long.gfuhubh.cn:443
+
 
 插件ui页面填写Scheme
-
 Scheme示例：
 - Safari：留空
 - SenPlayer：SenPlayer://x-callback-url/play?url=
 - MKVPiP：mkvpipurl://
-
 
 */
 
