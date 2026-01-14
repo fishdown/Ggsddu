@@ -13,6 +13,8 @@ sch = input,"mkvpipurl://",tag=输入完整scheme,desc=
 [MitM]
 hostname = *.cloudfront.net,long.gfuhubh.cn
 
+
+
 # 萝莉岛 d1w3p997s8acw6.cloudfront.net
 # 妻友社区 d10cvfvt18g9rw.cloudfront.net
 # 50度灰 long.gfuhubh.cn:443
