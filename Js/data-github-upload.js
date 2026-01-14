@@ -1,3 +1,27 @@
+/*
+
+#!name = 文本/手动上传GitHub
+#!desc = 脚本使用说明，较为详细，仔细阅读\n- 插件文件：输入上传的文本,支持换行\n- git用户名：顾名思义\n- git仓库名：顾名思义\n- git分支：顾名思义,一般不是master就是main\n- 上传or删除切换开关：通过文件路径\n- 文件路径：只写仓库内文件路径\n          文件夹/文件夹/文件.lpx\n          文件夹/文件.lpx\n          文件.lpx\n- gitoken：Google搜,建议无时间限制,需有上传权限
+#!openUrl = 
+#!icon = https://raw.githubusercontent.com/fishdown/Icon/master/app/github.png
+#!author = fishdown[https://github.com/fishdown/Ggsddu]
+#!date = 2025-12-28
+
+[Argument]
+text = input,"",tag=插件文本,desc=输入要上传的完整文本，支持换行
+owner = input,"",tag=git用户名,desc=GitHub 用户名
+repo = input,"",tag=git仓库名,desc=GitHub 仓库名
+branch = input,"",tag=git分支,desc=GitHub 分支
+upload = switch,true,tag=启用上传/关闭删除,desc=
+path = input,"/*.lpx",tag=文件路径,desc=文件夹/文件名.lpx
+ghToken = input,"",tag=gitoken,desc=GitHub Token
+
+[Script]
+cron "35 * * * *" script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/master/Js/data-github-upload.js, timeout=60, img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/github.png,enable=false,tag=Github上传文件, argument=[{text},{owner},{repo},{branch},{upload},{path},{ghToken}]
+
+*/
+
+
 // ========== 参数 ==========
 let text = $argument.text || "";      
 let owner = $argument.owner || "";    
@@ -207,4 +231,5 @@ function base64Encode(str) {
         encoded = btoa(unescape(encodeURIComponent(str)));
     }
     return encoded;
+
 }
