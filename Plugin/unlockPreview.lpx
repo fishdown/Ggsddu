@@ -15,9 +15,7 @@
 (?i)^https:\/\/([0-9a-z]+\.)?kelee\.one(?![^\s]*\.(?:css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ response-header-replace Content-Type text/plain;charset=utf-8
 (?i)^https:\/\/([0-9a-z]+\.)?kelee\.one(?![^\s]*\.(?:css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ header-replace User-Agent script-hub/1.0.0
 
-^https:\/\/ddgksf2013\.top[^\s]*\.(js|sgmodule|conf|json)$ header-replace user-agent Quantumult\x20X
-^https:\/\/ddgksf2013\.top[^\s]*\.(js|sgmodule|conf)$ response-header-replace content-type application/javascript;charset=utf-8
-^https:\/\/ddgksf2013\.top[^\s]*\.(json)$ response-header-replace content-type application/json;charset=utf-8
+^https:\/\/ddgksf2013\.top[^\s]*\.(js|sgmodule|conf|json)$ header-replace user-agent Surge
 
 ^https:\/\/he2o\.vercel\.app\/Resource response-header-replace content-type application/json;charset=utf-8
 
