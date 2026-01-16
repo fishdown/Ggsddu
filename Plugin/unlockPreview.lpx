@@ -19,12 +19,10 @@
 
 ^https:\/\/he2o\.vercel\.app\/Resource response-header-replace content-type application/json;charset=utf-8
 
-^https:\/\/gjds\.vip[^\s]*\.(js|sgmodule|conf|json)$ response-header-replace content-type application/javascript;charset=utf-8
-
 ^https:\/\/whatshub\.top(?![^\s]*\.(?:css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ response-header-replace content-type application/javascript;charset=utf-8
 
 ^https:\/\/loon\.103516\.xyz[^\s]*\.(js|sgmodule|conf|json|lpx|snippet)$ header-replace user-agent Loon/924\x20CFNetwork/3860.300.31\x20Darwin/25.2.0
 ^https:\/\/loon\.103516\.xyz[^\s]*\.(js|sgmodule|conf|lpx|snippet)$ response-header-replace content-type application/json;charset=utf-8
 
 [mitm]
-hostname= rule.kelee.one,kelee.one,ddgksf2013.top,he2o.vercel.app,gjds.vip,whatshub.top,loon.103516.xyz
+hostname= rule.kelee.one,kelee.one,ddgksf2013.top,he2o.vercel.app,whatshub.top,loon.103516.xyz
