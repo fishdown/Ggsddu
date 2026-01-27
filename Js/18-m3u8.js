@@ -62,8 +62,8 @@ $persistentStore.write(reqUrl, cacheKey);
 
 // 拼接跳转链接
 const jumpUrl = scheme + reqUrl;
-// console.log("跳转Url：");
-// console.log(jumpUrl);
+console.log("跳转Url：");
+console.log(jumpUrl);
 
 // 通知附件（点击跳转 + 复制）
 const attach = {
