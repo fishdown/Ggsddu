@@ -5,7 +5,7 @@
 #!author = fishdown[https://github.com/fishdown/Ggsddu]
 #!icon = https://raw.githubusercontent.com/fishdown/Icon/master/app/hlw.png
 #!tag = 18
-#!date = 2026-01-31 11:00
+#!date = 2026-01-31 12:00
 
 [Argument]
 open= switch,false,tag=脚本开关,desc=默认关闭
