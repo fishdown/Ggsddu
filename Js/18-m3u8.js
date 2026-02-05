@@ -5,7 +5,7 @@
 #!icon = https://raw.githubusercontent.com/fishdown/Icon/refs/heads/master/app/porn.png
 
 [Script]
-http-request (?i)\.m3u8(?:\?|#|$) script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/18-m3u8.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/porn.png,  tag = 抓取m3u8, argument=[{sch}]
+http-request (?i)\.m3u8(?:\?|#|$) script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/18-m3u8.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/m3u8.png,  tag = 抓取m3u8, argument=[{sch}]
 
 [Argument]
 sch = input,"mkvpipurl://",tag=输入完整scheme,desc=
