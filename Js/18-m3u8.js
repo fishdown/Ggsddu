@@ -24,7 +24,7 @@ DOMAIN-SUFFIX,pear2.cc,PROXY
 # mmav
 DOMAIN,kwmdmmsp.hongtaitanghua.com,PROXY
 # 红杏视频
-DOMAIN,jpxm3u8.com,PROXY
+DOMAIN,bf4.qrtuv.com,PROXY
 # 91porn短视频
 DOMAIN,long.bcgrll.cn,PROXY
 # 91工厂
@@ -33,7 +33,7 @@ DOMAIN,*.kyxcom.com,PROXY
 DOMAIN,long.ojhhfa.cn,PROXY
 
 [MitM]
-hostname = *.cloudfront.net,long.gfuhubh.cn,*.cdn2020.com,surrit.com,babe.babeshop.xyz,m2.kdamao.com,dash.madou.club,*.pear2.cc,kwmdmmsp.hongtaitanghua.com,jpxm3u8.com,long.bcgrll.cn,*.kyxcom.com,long.ojhhfa.cn
+hostname = *.cloudfront.net,long.gfuhubh.cn,*.cdn2020.com,surrit.com,babe.babeshop.xyz,m2.kdamao.com,dash.madou.club,*.pear2.cc,kwmdmmsp.hongtaitanghua.com,bf4.qrtuv.com,long.bcgrll.cn,*.kyxcom.com,long.ojhhfa.cn
 
 [Script]
 http-request (?i)\.m3u8(?:\?|#|$) script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/18-m3u8.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/m3u8.png,  tag = 抓取m3u8, argument=[{sch}]
