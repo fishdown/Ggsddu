@@ -8,8 +8,8 @@
 #-----------------------------------------------------m3u8地址
 # 萝莉岛 妻友社区
 DOMAIN,*.cloudfront.net,PROXY
-# 50度灰
-DOMAIN,long.gfuhubh.cn,PROXY
+# 50度灰，91porn短视频，海角社区
+DOMAIN,long.*.cn,PROXY
 # MissAV
 DOMAIN,*.cdn2020.com,PROXY
 DOMAIN,surrit.com,PROXY
@@ -25,15 +25,11 @@ DOMAIN-SUFFIX,pear2.cc,PROXY
 DOMAIN,kwmdmmsp.hongtaitanghua.com,PROXY
 # 红杏视频
 DOMAIN,bf4.qrtuv.com,PROXY
-# 91porn短视频
-DOMAIN,long.bcgrll.cn,PROXY
 # 91工厂
 DOMAIN,*.kyxcom.com,PROXY
-# 海角社区
-DOMAIN,long.ojhhfa.cn,PROXY
 
 [MitM]
-hostname = *.cloudfront.net,long.gfuhubh.cn,*.cdn2020.com,surrit.com,babe.babeshop.xyz,m2.kdamao.com,dash.madou.club,*.pear2.cc,kwmdmmsp.hongtaitanghua.com,bf4.qrtuv.com,long.bcgrll.cn,*.kyxcom.com,long.ojhhfa.cn
+hostname = *.cloudfront.net,long.*.cn,*.cdn2020.com,surrit.com,babe.babeshop.xyz,m2.kdamao.com,dash.madou.club,*.pear2.cc,kwmdmmsp.hongtaitanghua.com,bf4.qrtuv.com,*.kyxcom.com
 
 [Script]
 http-request (?i)\.m3u8(?:\?|#|$) script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/18-m3u8.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/m3u8.png,  tag = 抓取m3u8, argument=[{sch}]
