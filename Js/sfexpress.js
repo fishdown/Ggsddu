@@ -12,13 +12,12 @@ hostname = ccsp-egmas.sf-express.com
 [Script]
 cron {CronT} script-path=sfexpress.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/shunfeng.png, enable={Cron},tag=顺丰速运
 http-request ^https:\/\/ccsp-egmas.sf-express.com\/cx-app-member\/member\/app\/user\/universalSign script-path=sfexpress.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/shunfeng.png, requires-body=true,enable={Cookie}, tag=顺丰速运Cookie
-*/
 
 [Argument]
 CronT = input,"12 0  * * *",tag=Cron时间,desc=
 Cron = switch,true,tag=Cron开关,desc=
 Cookie = switch,true,tag=Cookie开关,desc=
-
+*/
 
 //脚本引用地址https://github.com/chavyleung/scripts/tree/master/sfexpress
 
