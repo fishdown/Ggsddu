@@ -10,8 +10,8 @@
 hostname = ccsp-egmas.sf-express.com
 
 [Script]
-cron {CronT} script-path=sfexpress.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/shunfeng.png, enable={Cron},tag=顺丰速运
-http-request ^https:\/\/ccsp-egmas.sf-express.com\/cx-app-member\/member\/app\/user\/universalSign script-path=sfexpress.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/shunfeng.png, requires-body=true,enable={Cookie}, tag=顺丰速运Cookie
+cron {CronT} script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/sfexpress.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/shunfeng.png, enable={Cron},tag=顺丰速运
+http-request ^https:\/\/ccsp-egmas.sf-express.com\/cx-app-member\/member\/app\/user\/universalSign script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/sfexpress.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/shunfeng.png, requires-body=true,enable={Cookie}, tag=顺丰速运Cookie
 
 [Argument]
 CronT = input,"12 0,1 * * *",tag=Cron时间,desc=
