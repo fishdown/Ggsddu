@@ -14,7 +14,7 @@ cron {CronT} script-path=sfexpress.js,img-url=https://raw.githubusercontent.com/
 http-request ^https:\/\/ccsp-egmas.sf-express.com\/cx-app-member\/member\/app\/user\/universalSign script-path=sfexpress.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/shunfeng.png, requires-body=true,enable={Cookie}, tag=顺丰速运Cookie
 
 [Argument]
-CronT = input,"12 0  * * *",tag=Cron时间,desc=
+CronT = input,"12 0,1 * * *",tag=Cron时间,desc=
 Cron = switch,true,tag=Cron开关,desc=
 Cookie = switch,true,tag=Cookie开关,desc=
 */
