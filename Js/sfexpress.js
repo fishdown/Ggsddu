@@ -1,7 +1,7 @@
 /*
 #!name = 顺丰速运
 #!desc = Cookie，Cron，支持多账号
-#!author = chavyleung
+#!author = chavyleung,GPT
 #!openUrl = 
 #!tag = fishdown
 #!icon = https://raw.githubusercontent.com/fishdown/Icon/refs/heads/master/app/shunfeng.png
