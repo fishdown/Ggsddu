@@ -13,6 +13,8 @@ DOMAIN-SUFFIX,cloudfront.net,PROXY
 # MissAV
 DOMAIN-SUFFIX,cdn2020.com,PROXY
 DOMAIN,surrit.com,PROXY
+# 糖心
+DOMAIN,tth.txh069.com,PROXY
 # xx9
 DOMAIN,babe.babeshop.xyz,PROXY
 #ikm26 
