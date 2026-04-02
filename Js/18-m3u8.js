@@ -36,23 +36,23 @@ DOMAIN-SUFFIX,hdcdn.online,PROXY
 hostname = *.cloudfront.net,long.*.cn,*.cdn2020.com,surrit.com,babe.babeshop.xyz,m2.kdamao.com,dash.madou.club,*.pear2.cc,kwmdmmsp.hongtaitanghua.com,bf4.qrtuv.com,*.kyxcom.com,*.hdcdn.online
 
 [Script]
-http-request (?i)\.m3u8(?:\?|#|$) script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/18-m3u8.js,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/m3u8.png,  tag = 抓取m3u8, argument=[{sch}]
+http-request (?i)\.m3u8(?:\?|#|$) script-path=18-m3u8.js,requires-body=false,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/m3u8.png,enable={sw},tag=抓取m3u8,argument=[{vid},{userscheme},{ucode}]
 
 [Argument]
-sch = input,"mkvpipurl://",tag=输入完整scheme,desc=
+vid = select,"MKVPiP","lenna", "SenPlayer", "SenPlayer-dl", "Infuse", "Fileball", "VidHub", "Alook", "VLC", "KMPlayer", "IINA", "NPlayer", "Safari",tag=选取播放器,desc=
+userscheme = input, "", tag=自定义Scheme, desc=
+ucode  = select,"yes","no",tag=URL编码,desc=
 
 */
 
 //
-//  插件ui页面填写Scheme
-//  Scheme示例：
-// - Safari：留空
-//- SenPlayer：SenPlayer://x-callback-url/play?url=
-//- MKVPiP：mkvpipurl://
+//  插件ui页面
+//  自定义scheme优先级最高
+//  
+//  
+//  
 
-
-const reqUrl=$request.url;if(!reqUrl||!/\.m3u8(\?|$)/i.test(reqUrl)){console.log("请求地址非m3u8");$done({});return}const scheme=($argument.sch||"").trim();const cacheKey="LAST_M3U8_URL";const lastUrl=$persistentStore.read(cacheKey);if(lastUrl===reqUrl){console.log("地址重复不通知");$done({});return}$persistentStore.write(reqUrl,cacheKey);const jumpUrl=scheme+reqUrl;console.log("跳转Url：");console.log(jumpUrl);const attach={openUrl:jumpUrl,clipboard:reqUrl};$notification.post("🎬 捕获到 m3u8","点击使用播放器打开","",attach);$done({});
-
+const reqUrl=$request.url;if(!reqUrl||!/\.m3u8(\?|$)/i.test(reqUrl)){console.log("请求地址非m3u8");$done({});return}const vid=($argument.vid||"").trim(),userscheme=($argument.userscheme||"").trim(),ucode=($argument.ucode||"").trim().toLowerCase(),video={"MKVPiP":"mkvpipurl://","lenna":"lenna://x-callback-url/play?url=","SenPlayer":"SenPlayer://x-callback-url/play?url=","Infuse":"infuse://x-callback-url/play?url=","Fileball":"filebox://play?url=","Alook":"Alook://","VLC":"vlc://","KMPlayer":"kmplayer://","VidHub":"vidhub://x-callback-url/play?url=","IINA":"iina://weblink?url=","NPlayer":"nplayer-http://","Safari":"http://"};let scheme="",playerName="";if(userscheme){scheme=userscheme;playerName="自定义";console.log("使用自定义 scheme:",scheme)}else{const key=Object.keys(video).find(k=>k.toLowerCase()===vid.toLowerCase());if(!key){console.log("未匹配播放器："+vid);console.log("可选:",Object.keys(video).join(", "));$done({});return}scheme=video[key];playerName=key}const finalUrl=ucode==="yes"?encodeURIComponent(reqUrl):reqUrl,cacheKey="LAST_M3U8_URL",lastUrl=$persistentStore.read(cacheKey);if(lastUrl===reqUrl){console.log("地址重复不通知");$done({});return}$persistentStore.write(reqUrl,cacheKey);let jumpUrl=scheme+finalUrl;console.log("跳转Url：",jumpUrl);const attach={openUrl:jumpUrl,clipboard:reqUrl};$notification.post("🎬 捕获到 m3u8",`播放器: ${playerName} | 编码: ${ucode==="yes"?"是":"否"}`,"",attach);$done({});
 
 
 
