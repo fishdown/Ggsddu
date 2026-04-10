@@ -36,7 +36,7 @@ DOMAIN-SUFFIX,hdcdn.online,PROXY
 hostname = *.cloudfront.net,long.*.cn,*.cdn2020.com,surrit.com,babe.babeshop.xyz,m2.kdamao.com,dash.madou.club,*.pear2.cc,kwmdmmsp.hongtaitanghua.com,bf4.qrtuv.com,*.kyxcom.com,*.hdcdn.online
 
 [Script]
-http-request (?i)\.m3u8(?:\?|#|$) script-path=18-m3u8.js,requires-body=false,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/m3u8.png,enable={sw},tag=抓取m3u8,argument=[{vid},{userscheme},{ucode}]
+http-request (?i)\.m3u8(?:\?|#|$) script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/18-m3u8.js,requires-body=false,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/m3u8.png,enable={sw},tag=抓取m3u8,argument=[{vid},{userscheme},{ucode}]
 
 [Argument]
 vid = select,"MKVPiP","lenna", "SenPlayer", "SenPlayer-dl", "Infuse", "Fileball", "VidHub", "Alook", "VLC", "KMPlayer", "IINA", "NPlayer", "Safari",tag=选取播放器,desc=
