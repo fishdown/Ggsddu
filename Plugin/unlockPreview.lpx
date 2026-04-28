@@ -1,28 +1,33 @@
-#!name= 解除一些资源预览限制
-#!desc= 自用
-#!author= fishdown[https://github.com/fishdown/Ggsddu]
-#!openUrl = 
-#!homepage= 
-#!icon= https://raw.githubusercontent.com/fishdown/Icon/master/app/fishdown.png
-#!tag = 
-#!date=2025-12-28
+#!name=解除预览限制
+#!desc=墨鱼、恩秀、kelee、whatshub、N*+%、毒奶
+#!tag=fishdown
+#!icon=https://raw.githubusercontent.com/fishdown/Icon/refs/heads/master/app/unlockPreview.png
 
-[Argument]
+[Rule]
 
-[rule]
+[Rewrite]
+# 墨鱼 
+^https:\/\/ddgksf2013\.top[^\s]*\.(js|sgmodule|conf|lcf|json|plugin|lpx)$ header-replace user-agent Surge
+^https:\/\/ddgksf2013\.top[^\s]*\.(js|sgmodule|conf|lcf|json|plugin|lpx)$ response-header-replace content-type application/json;charset=utf-8
 
-[rewrite]
-(?i)^https:\/\/([0-9a-z]+\.)?kelee\.one(?![^\s]*\.(?:css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ response-header-replace Content-Type text/plain;charset=utf-8
-(?i)^https:\/\/([0-9a-z]+\.)?kelee\.one(?![^\s]*\.(?:css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ header-replace User-Agent script-hub/1.0.0
+# 恩秀
+^https:\/\/loon\.103516\.xyz[^\s]*\.(js|sgmodule|conf|lcf|json|plugin|lpx)$ header-replace user-agent Loon
+#^https:\/\/loon\.103516\.xyz[^\s]*\.(js|sgmodule|conf|lcf|json|plugin|lpx)$ response-header-replace content-type application/json;charset=utf-8
 
-^https:\/\/ddgksf2013\.top[^\s]*\.(js|sgmodule|conf|json)$ header-replace user-agent Surge
+# kelee
+^https:\/\/([0-9a-z]+\.)?kelee\.one[^\s]*\.(js|sgmodule|conf|lcf|json|plugin|lpx)$ response-header-replace Content-Type text/plain;charset=utf-8
+^https:\/\/([0-9a-z]+\.)?kelee\.one[^\s]*\.(js|sgmodule|conf|lcf|json|plugin|lpx)$ header-replace User-Agent script-hub/1.0.0
 
-^https:\/\/he2o\.vercel\.app\/Resource response-header-replace content-type application/json;charset=utf-8
+# whatshub
+^https:\/\/whatshub\.top[^\s]*\.(js|sgmodule|conf|lcf|json|plugin|lpx)$ response-header-replace content-type application/javascript;charset=utf-8
 
-^https:\/\/whatshub\.top(?![^\s]*\.(?:css|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|otf|mp4|webm|m3u8|ts|avi))[^\s]*$ response-header-replace content-type application/javascript;charset=utf-8
+# N*+%
+#^https:\/\/he2o\.vercel\.app[^\s]*\.(js|sgmodule|conf|lcf|json|plugin|lpx)$ response-header-replace content-type application/json;charset=utf-8
 
-^https:\/\/loon\.103516\.xyz[^\s]*\.(js|sgmodule|conf|json|lpx|snippet)$ header-replace user-agent Loon/924\x20CFNetwork/3860.300.31\x20Darwin/25.2.0
-^https:\/\/loon\.103516\.xyz[^\s]*\.(js|sgmodule|conf|lpx|snippet)$ response-header-replace content-type application/json;charset=utf-8
+# 毒奶
+^https:\/\/limbopro\.com[^\s]*\.(js|sgmodule|conf|lcf|json|plugin|lpx)$ response-header-replace content-type application/json;charset=utf-8
 
-[mitm]
-hostname= rule.kelee.one,kelee.one,ddgksf2013.top,he2o.vercel.app,whatshub.top,loon.103516.xyz
+[Script]
+
+[MitM]
+hostname=ddgksf2013.top,loon.103516.xyz,kelee.one,*.kelee.one,whatshub.top,he2o.vercel.app,limbopro.com
