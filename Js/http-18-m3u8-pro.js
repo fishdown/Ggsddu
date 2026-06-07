@@ -16,7 +16,7 @@ SkipKeywords = input, "", tag=url关键字跳过抓取en逗号隔开, desc= 例�
 
 
 [Script]
-http-request \.(m3u8|mp4|flv) script-path=http-18-m3u8.js,requires-body=false,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/m3u8.png,enable={sw},tag=抓取m3u8,argument=[{notify},{webhook},{webhookUrl},{vid},{userscheme},{ucode},{SkipKeywords}]
+http-request \.(m3u8|mp4|flv) script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/http-18-m3u8-pro.js,requires-body=false,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/m3u8.png,enable={sw},tag=抓取m3u8,argument=[{notify},{webhook},{webhookUrl},{vid},{userscheme},{ucode},{SkipKeywords}]
 
 
 [MitM]
