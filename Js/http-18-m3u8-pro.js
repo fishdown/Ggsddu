@@ -20,7 +20,7 @@ http-request \.(m3u8|mp4) script-path=https://raw.githubusercontent.com/fishdown
 
 
 [MitM]
-hostname = *.top,www.hairwwwtoppd125.com,ikmjx.com,www.vv99kk.com,miss1.net,dash.madou.club,madou.club,*.cloudfront.net,*.cdn2020.com,surrit.com,babe.babeshop.xyz,m2.kdamao.com,kwmdmmsp.hongtaitanghua.com,m2.kdamao.com,bf4.qrtuv.com,*.kyxcom.com,nnrj1219.awbfszm5.work,long.*.cn,*.hdcdn.online,69833acc.soft-rain-111.site,recordplay.biz,h9k2w.cc,*.vf84i7x.work,live.douyin.com
+hostname = www.hairwwwtoppd125.com,ikmjx.com,www.vv99kk.com,miss1.net,dash.madou.club,madou.club,*.cloudfront.net,*.cdn2020.com,surrit.com,babe.babeshop.xyz,m2.kdamao.com,kwmdmmsp.hongtaitanghua.com,m2.kdamao.com,bf4.qrtuv.com,*.kyxcom.com,nnrj1219.awbfszm5.work,long.*.cn,*.hdcdn.online,69833acc.soft-rain-111.site,recordplay.biz,h9k2w.cc,*.vf84i7x.work,live.douyin.com
 
 
 
