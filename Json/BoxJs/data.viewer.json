@@ -6,6 +6,32 @@
     "repo": "",
     "apps": [
         {
+            "id": "sfsy",
+            "name": "顺丰速运",
+            "keys": [
+                "sfCookies"
+            ],
+            "descs_html": [],
+            "settings": [
+                {
+                    "id": "sfCookies",
+                    "name": "sfCookies",
+                    "val": "",
+                    "type": "textarea",
+                    "autoGrow": false,
+                    "rows": 6,
+                    "desc": "支持多账户"
+                }
+            ],
+            "author": "",
+            "repo": "",
+            "script": "",
+            "icons": [
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/shunfeng.png",
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/shunfeng.png"
+            ]
+        },
+        {
             "id": "wps",
             "name": "WPS",
             "keys": [
@@ -59,6 +85,3 @@
         }
     ]
 }
-
-
-
