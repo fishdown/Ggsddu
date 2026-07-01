@@ -6,6 +6,29 @@
     "repo": "",
     "apps": [
         {
+            "id": "aliyun",
+            "name": "阿里云盘",
+            "author": "@Sliverkiss",
+            "repo": "",
+            "icons": [
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/alyp.png",
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/alyp.png"
+            ],
+            "keys": [
+                "aliyun_data"
+            ],
+            "settings": [
+                {
+                    "id": "aliyun_data",
+                    "name": "会员Cookie数据",
+                    "val": "",
+                    "type": "textarea",
+                    "autoGrow": true,
+                    "desc": "会员Cookie数据"
+                }
+            ]
+        },
+        {
             "id": "yuchenios",
             "name": "雨晨ios",
             "author": "@Sliverkiss",
@@ -90,7 +113,7 @@
             ]
         },
         {
-            "id": "sf",
+            "id": "sfsy",
             "name": "顺丰速运",
             "keys": [
                 "sfCookies"
