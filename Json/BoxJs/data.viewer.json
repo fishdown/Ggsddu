@@ -6,6 +6,38 @@
     "repo": "",
     "apps": [
         {
+            "id": "sliverkiss_yuchenios",
+            "name": "雨晨ios",
+            "author": "@Sliverkiss",
+            "repo": "",
+            "icons": [
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/ycheng.png",
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/ycheng.png"
+            ],
+            "keys": [
+                "yuchenios_data",
+                "yuchenios_host"
+            ],
+            "settings": [
+                {
+                    "id": "yuchenios_data",
+                    "name": "会员Cookie数据",
+                    "val": "",
+                    "type": "text",
+                    "autoGrow": true,
+                    "desc": "会员Cookie数据"
+                },
+                {
+                    "id": "yuchenios_host",
+                    "name": "网站host",
+                    "val": "",
+                    "type": "text",
+                    "autoGrow": true,
+                    "desc": "网站host"
+                }
+            ]
+        },
+        {
             "id": "pingme",
             "name": "PingMe",
             "keys": [
@@ -133,6 +165,42 @@
             "icons": [
                 "https://raw.githubusercontent.com/fishdown/Icon/master/app/jd.png",
                 "https://raw.githubusercontent.com/fishdown/Icon/master/app/jd.png"
+            ]
+        },
+        {
+            "id": "zZ.Oclean",
+            "name": "欧可林",
+            "keys": [
+                "Oclean",
+                "Oclean_mini"
+            ],
+            "descs_html": [],
+            "settings": [
+                {
+                    "id": "Oclean",
+                    "name": "Shop-Member",
+                    "val": "",
+                    "type": "text",
+                    "autoGrow": true,
+                    "rows": 6,
+                    "desc": "用户验证信息，由 app 注册绑定生成"
+                },
+                {
+                    "id": "Oclean_mini",
+                    "name": "openId",
+                    "val": "",
+                    "type": "text",
+                    "autoGrow": true,
+                    "rows": 6,
+                    "desc": "用户验证信息，由微信小程序生成"
+                }
+            ],
+            "author": "",
+            "repo": "",
+            "script": "",
+            "icons": [
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/okl.png",
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/okl.png"
             ]
         }
     ]
