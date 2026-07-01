@@ -27,8 +27,8 @@
             "repo": "",
             "script": "",
             "icons": [
-                "https://raw.githubusercontent.com/fishdown/Icon/master/app/WeTalk.png",
-                "https://raw.githubusercontent.com/fishdown/Icon/master/app/WeTalk.png"
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/PingMe.png",
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/PingMe.png"
             ]
         },
         {
@@ -87,13 +87,13 @@
             "id": "wps",
             "name": "WPS",
             "keys": [
-                "wps_pc_val"
+                "wps_sid"
             ],
             "descs_html": [],
             "settings": [
                 {
-                    "id": "wps_pc_val",
-                    "name": "wps_pc_val",
+                    "id": "wps_sid",
+                    "name": "wps_sid",
                     "val": "",
                     "type": "textarea",
                     "autoGrow": true,
