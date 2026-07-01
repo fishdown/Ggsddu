@@ -6,7 +6,7 @@
     "repo": "",
     "apps": [
         {
-            "id": "sliverkiss_yuchenios",
+            "id": "yuchenios",
             "name": "雨晨ios",
             "author": "@Sliverkiss",
             "repo": "",
@@ -168,7 +168,7 @@
             ]
         },
         {
-            "id": "zZ.Oclean",
+            "id": "Oclean",
             "name": "欧可林",
             "keys": [
                 "Oclean",
