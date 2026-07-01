@@ -6,6 +6,58 @@
     "repo": "",
     "apps": [
         {
+            "id": "pingme",
+            "name": "PingMe",
+            "keys": [
+                "pingme_accounts_v1"
+            ],
+            "descs_html": [],
+            "settings": [
+                {
+                    "id": "pingme_accounts_v1",
+                    "name": "pingme_accounts_v1",
+                    "val": "",
+                    "type": "textarea",
+                    "autoGrow": true,
+                    "rows": 6,
+                    "desc": ""
+                }
+            ],
+            "author": "",
+            "repo": "",
+            "script": "",
+            "icons": [
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/WeTalk.png",
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/WeTalk.png"
+            ]
+        },
+        {
+            "id": "wetalk",
+            "name": "WeTalk",
+            "keys": [
+                "wetalk_accounts_v1"
+            ],
+            "descs_html": [],
+            "settings": [
+                {
+                    "id": "wetalk_accounts_v1",
+                    "name": "wetalk_accounts_v1",
+                    "val": "",
+                    "type": "textarea",
+                    "autoGrow": true,
+                    "rows": 6,
+                    "desc": ""
+                }
+            ],
+            "author": "",
+            "repo": "",
+            "script": "",
+            "icons": [
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/WeTalk.png",
+                "https://raw.githubusercontent.com/fishdown/Icon/master/app/WeTalk.png"
+            ]
+        },
+        {
             "id": "sfsy",
             "name": "顺丰速运",
             "keys": [
@@ -18,9 +70,9 @@
                     "name": "sfCookies",
                     "val": "",
                     "type": "textarea",
-                    "autoGrow": false,
+                    "autoGrow": true,
                     "rows": 6,
-                    "desc": "支持多账户"
+                    "desc": ""
                 }
             ],
             "author": "",
