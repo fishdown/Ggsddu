@@ -64,7 +64,7 @@ const video = {
   VidHub: "vidhub://x-callback-url/play?url=",
   IINA: "iina://weblink?url=",
   NPlayer: "nplayer-http://",
-  Safari: "http://",
+  Safari: "",
 };
 
 let scheme = "";
