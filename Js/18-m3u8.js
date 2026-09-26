@@ -1,7 +1,7 @@
 /*
 #!name = 抓取m3u8地址porn
 #!desc = 自行添加hostname，为了防止频发通知，同一个视频连续打开第二次不会通知
-#!author = fishdown[https://github.com/fishdown/Ggsddu]
+#!author = 鱼安fishdown[https://github.com/fishdown/Ggsddu]
 #!icon = https://raw.githubusercontent.com/fishdown/Icon/refs/heads/master/app/porn.png
 
 [MitM]
@@ -11,9 +11,9 @@ hostname = *.cloudfront.net,long.*.cn,*.cdn2020.com,surrit.com,babe.babeshop.xyz
 http-request \.m3u8 script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/18-m3u8.js,requires-body=false,img-url=https://raw.githubusercontent.com/fishdown/Icon/master/app/m3u8.png,tag=抓取m3u8,argument=[{vid},{userscheme},{ucode}]
 
 [Argument]
-vid = select,"MKVPiP","lenna", "SenPlayer", "SenPlayer-dl", "Infuse", "Fileball", "VidHub", "Alook", "VLC", "KMPlayer", "IINA", "NPlayer", "Safari",tag=选取播放器,desc=
-userscheme = input, "", tag=自定义Scheme/优先级最高, desc=
-ucode  = select,"yes","no",tag=URL编码/不智能自行判断,desc=
+vid = select,"MKVPiP","lenna", "SenPlayer", "SenPlayer-dl", "Infuse", "Fileball", "VidHub", "Alook", "VLC", "KMPlayer", "IINA", "NPlayer", "Safari",tag=跳转播放器
+userscheme = input, "", tag=自定义Scheme, desc=优先级最高
+ucode  = select,"yes","no",tag=URL编码,desc=不智能，自行判断
 
 */
 
