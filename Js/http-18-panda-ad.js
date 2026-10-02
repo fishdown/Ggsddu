@@ -14,6 +14,17 @@ response if ${url} ~= /^https:\/\/(?:xmad\.7wzx9\.com\/common45\.js|spiderscloud
 hostname = xmad.7wzx9.com,spiderscloudcn2.51111666.com
 
 */
+/*
+[rewrite_local]
+^https:\/\/(?:xmad\.7wzx9\.com\/common45\.js|spiderscloudcn2\.51111666\.com\/getDataInit)(?:\?.*)?$ url script-response-body https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/http-18-panda-ad.js
+[mitm]
+hostname = xmad.7wzx9.com,spiderscloudcn2.51111666.com
+*
+*
+*/
+
+
+
 // Shared Loon http-response script for common45.js and getDataInit.
 // Both matching rules should use this file with requires-body=true.
 
