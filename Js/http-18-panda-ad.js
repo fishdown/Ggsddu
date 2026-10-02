@@ -1,6 +1,6 @@
 /*
-#!name = 熊猫视频网页去广告
-#!desc = 免费18+，Adfree
+#!name = 熊猫视频去广告 porn
+#!desc = 免费18+网页，Adfree
 #!openUrl = https://www.vv99kk.com
 #!icon = https://raw.githubusercontent.com/fishdown/Icon/refs/heads/master/app/panda.png
 #!author = fishdown
