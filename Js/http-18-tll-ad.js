@@ -1,9 +1,10 @@
 /*
-#!name = Tianlula.TV porn
-#!desc = 去广告
-#!openUrl = https://tianlula.tv
+#!name = 天撸啦 porn
+#!desc = Adfree
+#!openUrl = https://tianlula.com
 #!homepage = https://t.me/Tianlulatv
 #!icon = https://raw.githubusercontent.com/fishdown/Icon/refs/heads/master/app/tianll.png
+#!tag=18+
 #!author = fishdown
 
 [Rewrite]
