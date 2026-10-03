@@ -3,7 +3,7 @@
 #!desc = 去广告
 #!openUrl = https://tianlula.tv
 #!homepage = https://t.me/Tianlulatv
-#!icon = https://raw.githubusercontent.com/fishdown/Icon/refs/heads/master/app/tll.png
+#!icon = https://raw.githubusercontent.com/fishdown/Icon/refs/heads/master/app/tianll.png
 #!author = fishdown
 
 [Rewrite]
