@@ -12,7 +12,7 @@
 #!type=parser
 
 [Argument]
-node = input,"",tag=批量导入本地节点,desc=节点url随便填入一个http地址；例：https://www.baidu.com，建议用不到的地址；这条是input，点开粘贴节点；不处理本地节点，保持这条为空
+node = input,"",tag=批量导入本地节点,desc=URL填用不到的地址；例：https://www.baidu.com；这条是input，点开粘贴节点；不处理本地节点，保持这条为空
 ua = input,"Loon",tag=拉取节点UA,desc=自定义；默认为Loon；拉取失败触发二次拉取节点才会带上ua
 emoji = switch,false,tag=节点名添加emoji,desc= 已存在不会重复添加
 twemoji = switch,false,tag=节点名处理台湾emoji
