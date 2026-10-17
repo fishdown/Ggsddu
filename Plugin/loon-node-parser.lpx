@@ -1,0 +1,37 @@
+#!name=Loon订阅解析器【鱼安】
+#!desc=·专门用于解析订阅节点的插件\n·具体内容看arg参数\n·更适配普通机场，不支持特殊机场，请勿使用🤪
+#!openUrl=https://nsloon.app
+#!author=GPT
+#!tag=解析器
+#!system=
+#!system_version=
+#!loon_version=3.5.3(1008)
+#!homepage=https://nsloon.app
+#!icon=https://raw.githubusercontent.com/Loon0x00/Loon0x00.github.io/main/static/img/loon.png
+#!date=2026-10-17
+#!type=parser
+
+[Argument]
+node = input,"",tag=填入本地节点,desc=节点url随便填入一个http地址，把复制过来的本地节点填入输入框内
+ua = input,"Loon",tag=拉取节点UA,desc=自定义；默认为Loon
+emoji = switch,false,tag=添加图标,desc= 已存在不会重复添加
+twemoji = switch,false,tag=台湾图标修改为中国图标
+delemoji = switch,false,tag=删除图标
+front = input,"",tag=⬇️节点名称,desc= 关键字添加；前面
+behind = input,"",tag=节点名称⬇️,desc= 关键字添加；后面
+del = input,"",tag=节点名称,desc=关键字删除；支持多个，英文逗号隔开；区分大小写
+replace = input,"",tag=节点名称,desc=关键字替换；例：tw#台湾,香港#HK #连接，#后面替换前面，英文逗号隔开；区分大小写
+in = input,"",tag=保留节点,desc=关键字；支持多个，英文逗号隔开
+out = input,"",tag=删除节点,desc=关键字；支持多个，英文逗号隔开
+gpt = switch,false,tag=GPT检测,desc=检查通过的节点会在名称后面添加[GPT]；通过检测api来判断，效果不保证🤪
+api = input,"",tag=GPT api,desc=测gpt必填api
+timeout = input,"10",tag=脚本超时时间,desc=节点太多需延长时间，具体自测；单位为s
+
+
+[Script]
+generic then script("https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/loon-node-parser.js", {${ua}, ${node}, ${twemoji}, ${emoji}, ${delemoji}, ${front}, ${behind}, ${del}, ${replace}, ${in}, ${out}, ${gpt}, ${api}}) with tag="NodeParser",timeout=${timeout}
+
+
+
+
+
