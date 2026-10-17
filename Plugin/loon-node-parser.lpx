@@ -12,17 +12,17 @@
 #!type=parser
 
 [Argument]
-node = input,"",tag=填入本地节点,desc=节点url随便填入一个http地址，把复制过来的本地节点填入输入框内
-ua = input,"Loon",tag=拉取节点UA,desc=自定义；默认为Loon
-emoji = switch,false,tag=添加图标,desc= 已存在不会重复添加
-twemoji = switch,false,tag=台湾图标修改为中国图标
-delemoji = switch,false,tag=删除图标
+node = input,"",tag=批量导入本地节点,desc=节点url随便填入一个http地址；例：https://www.baidu.com，建议用不到的地址
+ua = input,"Loon",tag=拉取节点UA,desc=自定义；默认为Loon；拉取失败触发二次拉取节点才会带上ua
+emoji = switch,false,tag=添加emoji,desc= 已存在不会重复添加
+twemoji = switch,false,tag=台湾emoji修改为中国emoji
+delemoji = switch,false,tag=删除emoji
 front = input,"",tag=⬇️节点名称,desc= 关键字添加；前面
 behind = input,"",tag=节点名称⬇️,desc= 关键字添加；后面
 del = input,"",tag=节点名称,desc=关键字删除；支持多个，英文逗号隔开；区分大小写
-replace = input,"",tag=节点名称,desc=关键字替换；例：tw#台湾,香港#HK #连接，#后面替换前面，英文逗号隔开；区分大小写
-in = input,"",tag=保留节点,desc=关键字；支持多个，英文逗号隔开
-out = input,"",tag=删除节点,desc=关键字；支持多个，英文逗号隔开
+replace = input,"",tag=节点名称,desc=关键字替换；例：tw#台湾,香港#HK #连接，#后面替换前面，支持多个，英文逗号隔开；区分大小写
+in = input,"",tag=保留节点,desc=关键字；支持多个，英文逗号隔开；区分大小写
+out = input,"",tag=删除节点,desc=关键字；支持多个，英文逗号隔开；区分大小写
 gpt = switch,false,tag=GPT检测,desc=检查通过的节点会在名称后面添加[GPT]；通过检测api来判断，效果不保证🤪
 api = input,"",tag=GPT api,desc=测gpt必填api
 timeout = input,"10",tag=脚本超时时间,desc=节点太多需延长时间，具体自测；单位为s
@@ -32,4 +32,4 @@ enabled2 = switch,false,tag=旧格式脚本开关,desc= 不支持新版脚本格
 [Script]
 generic then script("https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/loon-node-parser.js", {${node}, ${ua}, ${emoji}, ${twemoji}, ${delemoji}, ${front}, ${behind}, ${del}, ${replace}, ${in}, ${out}, ${gpt}, ${api}}) with tag="NodeParser", img_url="https://raw.githubusercontent.com/Loon0x00/Loon0x00.github.io/main/static/img/loon.png",timeout=${timeout},enable=${enabled}
 
-generic script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/loon-node-parser.js,img-url=https://raw.githubusercontent.com/Loon0x00/Loon0x00.github.io/main/static/img/loon.png,timeout={timeout},enable={enabled2}, tag=NodeParser, argument=[{node}, {ua},  {emoji},{twemoji}, {delemoji}, {front}, {behind}, {del}, {replace}, {in}, {out}, {gpt}, {api}]
+generic script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/loon-node-parser.js,img-url=https://raw.githubusercontent.com/Loon0x00/Loon0x00.github.io/main/static/img/loon.png,timeout={timeout},enable={enabled2}, tag=NodeParser, argument=[{node},{ua},{emoji},{twemoji},{delemoji},{front},{behind},{del},{replace},{in},{out},{gpt},{api}]
