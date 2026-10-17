@@ -26,10 +26,10 @@ out = input,"",tag=删除节点,desc=关键字；支持多个，英文逗号隔�
 gpt = switch,false,tag=GPT检测,desc=检查通过的节点会在名称后面添加[GPT]；通过检测api来判断，效果不保证🤪
 api = input,"",tag=GPT api,desc=测gpt必填api
 timeout = input,"10",tag=脚本超时时间,desc=节点太多需延长时间，具体自测；单位为s
-
+enabled = switch,true,tag=新格式脚本开关
+enabled2 = switch,false,tag=旧格式脚本开关,desc= 不支持新版脚本格式的关掉上面开关，启用这个
 
 [Script]
-generic script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/loon-node-parser.js,img-url=https://raw.githubusercontent.com/Loon0x00/Loon0x00.github.io/main/static/img/loon.png,timeout=200,tag=NodeParser, argument=[{node}, {ua},  {emoji},{twemoji}, {delemoji}, {front}, {behind}, {del}, {replace}, {in}, {out}, {gpt}, {api}]
+generic then script("https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/loon-node-parser.js", {${node}, ${ua}, ${emoji}, ${twemoji}, ${delemoji}, ${front}, ${behind}, ${del}, ${replace}, ${in}, ${out}, ${gpt}, ${api}}) with tag="NodeParser", img_url="https://raw.githubusercontent.com/Loon0x00/Loon0x00.github.io/main/static/img/loon.png",timeout=${timeout},enable=${enabled}
 
-
-
+generic script-path=https://raw.githubusercontent.com/fishdown/Ggsddu/refs/heads/master/Js/loon-node-parser.js,img-url=https://raw.githubusercontent.com/Loon0x00/Loon0x00.github.io/main/static/img/loon.png,timeout=200,enable={enable2}, tag=NodeParser, argument=[{node}, {ua},  {emoji},{twemoji}, {delemoji}, {front}, {behind}, {del}, {replace}, {in}, {out}, {gpt}, {api}]
