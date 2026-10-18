@@ -24,7 +24,6 @@ replace = input,"",tag=节点名称,desc=关键字替换；例：tw#台湾,香�
 in = input,"",tag=保留节点,desc=关键字；支持多个，英文逗号隔开；区分大小写
 out = input,"",tag=删除节点,desc=关键字；支持多个，英文逗号隔开；区分大小写
 gpt = switch,false,tag=GPT检测,desc=检查通过的节点会在名称后面添加[GPT]；通过检测api来判断，效果不保证🤪
-api = input,"",tag=GPT api,desc=测gpt必填api
 timeout = input,"10",tag=脚本超时时间,desc=节点太多需延长时间，具体自测；单位为s
 enabled = switch,true,tag=脚本开关
 enabled2 = switch,false,tag=旧格式脚本开关,desc= 不支持新版脚本格式的关掉上面开关，启用这个
