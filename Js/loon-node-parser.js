@@ -35,7 +35,6 @@ var replace = $argument.replace;
 var inArg = $argument.in;
 var outArg = $argument.out;
 var gpt = $argument.gpt;
-var api = $argument.api;
 
 
 /* =========================================================
@@ -43,7 +42,7 @@ var api = $argument.api;
  * ========================================================= */
 
 var GPT_URL = "https://api.openai.com/v1/models";
-var GPT_TIMEOUT = 10000;
+var GPT_TIMEOUT = 8000;
 
 var GPT_USER_AGENT =
   "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) " +
@@ -241,19 +240,6 @@ var inKeywords = splitKeywords(inArg);
 var outKeywords = splitKeywords(outArg);
 var replaceRules = splitReplaceRules(replace);
 
-function isValidAPIKey(value) {
-  var text = trim(value);
-
-  if (!text) {
-    return false;
-  }
-
-  /* OpenAI API Key 常见格式：sk-... */
-  return /^sk-[A-Za-z0-9_-]{10,}$/.test(text);
-}
-
-var apiValid = isValidAPIKey(api);
-
 log("node: [" + (nodeResource ? "有值" : "") + "]");
 log("ua: [" + String(ua || "") + "]");
 log("emoji: [" + emoji + "]");
@@ -266,7 +252,6 @@ log("replace: [" + String(replace || "") + "]");
 log("in: [" + inKeywords.join(",") + "]");
 log("out: [" + outKeywords.join(",") + "]");
 log("gpt: [" + gpt + "]");
-log("api: [" + (apiValid ? "格式有效" : "为空或格式无效") + "]");
 
 
 /* =========================================================
@@ -1284,88 +1269,6 @@ function splitLoonLine(line) {
   };
 }
 
-function extractGPTMessage(body) {
-  var text = String(body || "");
-
-  try {
-    var json = JSON.parse(text);
-
-    if (json && json.error) {
-      return String(
-        json.error.code ||
-        json.error.error_type ||
-        ""
-      );
-    }
-
-    if (json && json.cf_details) {
-      return String(json.cf_details);
-    }
-  } catch (e) {
-    // 不是 JSON，保留原文本。
-  }
-
-  return text;
-}
-
-function isGPTSupportedResponse(status, message) {
-  return status === 403 &&
-    !/unsupported_country/i.test(
-      String(message || "")
-    );
-}
-
-function addGPTMark(line) {
-  var parts = splitLoonLine(line);
-
-  if (!parts) {
-    return line;
-  }
-
-  var name = parts.name;
-
-  if (name.indexOf("[GPT]") === -1) {
-    name += "[GPT]";
-  }
-
-  return name + "=" + parts.description;
-}
-
-function maskAPIKey(value) {
-  value = String(value || "");
-
-  if (value.length <= 8) {
-    return "***";
-  }
-
-  return value.substring(0, 4) +
-    "****" +
-    value.substring(value.length - 4);
-}
-
-function extractAPIError(body) {
-  var text = String(body || "");
-
-  try {
-    var json = JSON.parse(text);
-
-    if (json && json.error) {
-      if (typeof json.error === "string") {
-        return json.error;
-      }
-
-      return json.error.message ||
-        json.error.code ||
-        json.error.type ||
-        "";
-    }
-  } catch (e) {
-    // 非 JSON，返回原文。
-  }
-
-  return text;
-}
-
 function gptTestOne(line, callback) {
   var parts = splitLoonLine(line);
 
@@ -1377,7 +1280,7 @@ function gptTestOne(line, callback) {
   var processedName = parts.name;
   var nodeDescription = parts.description;
 
-  if (!nodeDescription || !api) {
+  if (!nodeDescription) {
     callback(line);
     return;
   }
@@ -1393,25 +1296,25 @@ function gptTestOne(line, callback) {
     callback(resultLine);
   }
 
-  gptLog("开始 API 测试: " + processedName);
+  gptLog("开始 GPT 检测: " + processedName);
 
   var request = {
     url: GPT_URL,
-    node: nodeDescription,
-    timeout: 8000,
-    "auto-redirect": false,
+    node: line,
+    timeout: GPT_TIMEOUT,
     headers: {
-      "Authorization": "Bearer " + String(api),
       "User-Agent": GPT_USER_AGENT,
-      "Accept": "application/json"
+      "Accept": "*/*"
     }
   };
 
   /* 单节点超时保护，防止没有回调时卡死。 */
   var guardTimer = setTimeout(function () {
-    gptLog("API 超时，保留原节点: " + processedName);
+    gptLog("GPT 检测超时，保留原节点: " + processedName);
     finishOnce(line);
   }, 11000);
+
+  var startedAt = Date.now();
 
   try {
     $httpClient.get(
@@ -1424,34 +1327,45 @@ function gptTestOne(line, callback) {
         clearTimeout(guardTimer);
 
         if (error) {
-          gptLog("请求失败，保留原节点: " + processedName);
+          gptLog("GPT 请求失败，保留原节点: " + processedName);
           finishOnce(line);
           return;
         }
 
-        var status = response && response.status
-          ? parseInt(response.status)
-          : 0;
+        var status = response && (
+          response.status !== undefined
+            ? response.status
+            : response.statusCode
+        );
+        var responseHeaders = response && response.headers
+          ? response.headers
+          : {};
+        var responseBody = data === undefined || data === null
+          ? ""
+          : String(data);
+        var latency = Date.now() - startedAt;
 
         gptLog(
-          "API 状态码: " +
-          status +
+          "GPT 响应状态: " +
+          String(status === undefined ? "未知" : status) +
           " | 节点: " +
-          processedName
+          processedName +
+          " | 延迟: " +
+          latency +
+          "ms"
         );
+        gptLog(
+          "GPT 响应头: " +
+          JSON.stringify(responseHeaders)
+        );
+        gptLog("GPT 响应体: " + responseBody);
 
-        if (status === 200) {
-          gptLog("支持 GPT，添加 [GPT]: " + processedName);
-          finishOnce(addGPTMark(line));
-        } else {
-          gptLog("不支持 GPT，保留原节点: " + processedName);
-          finishOnce(line);
-        }
+        finishOnce(line);
       }
     );
   } catch (e) {
     clearTimeout(guardTimer);
-    gptLog("API 调用异常，保留原节点: " + processedName);
+    gptLog("GPT 请求调用异常，保留原节点: " + processedName);
     finishOnce(line);
   }
 }
@@ -1605,15 +1519,6 @@ function processResource(input) {
    */
   if (!enabled(gpt)) {
     log("gpt 未开启，跳过 GPT 检测");
-    finish(nodes);
-    return;
-  }
-
-  /*
-   * api 为空或格式错误：即使 gpt=true 也跳过 GPT。
-   */
-  if (!apiValid) {
-    log("api 为空或格式无效，跳过 GPT 检测");
     finish(nodes);
     return;
   }
