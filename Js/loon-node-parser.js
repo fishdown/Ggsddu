@@ -2,13 +2,19 @@
  * Loon 订阅转换脚本
  *
  * 参数：
- * twemoji、emoji、delemoji、front、behind、del、in、out、replace、gpt、ua、node
- *
- * 当 $resource 没有有效节点时，使用 node 参数作为订阅响应体；
- * 两者都没有有效节点时，使用 ua 通过 $resourceUrl 重试拉取。
- *
- * GPT 使用固定 GPT_USER_AGENT，
- * 不使用参数 ua。
+ * node、批量添加节点
+ * ua、拉取节点失败发起二次拉取才会带ua
+ * emoji、添加emoji
+ * twemoji、修正emoji
+ * delemoji、删除emoji
+ * front、节点名词前面添加关键字
+ * behind、节点名词后面添加关键字
+ * del、节点名词删除关键字
+ * replace、节点名词替换关键字
+ * in、保留节点
+ * out、删除节点
+ * gpt、gpt检测开关
+ * 
  */
 
 var resource = $resource;
@@ -25,9 +31,9 @@ var delemoji = $argument.delemoji;
 var front = $argument.front;
 var behind = $argument.behind;
 var delArg = $argument.del;
+var replace = $argument.replace;
 var inArg = $argument.in;
 var outArg = $argument.out;
-var replace = $argument.replace;
 var gpt = $argument.gpt;
 var api = $argument.api;
 
@@ -248,17 +254,17 @@ function isValidAPIKey(value) {
 
 var apiValid = isValidAPIKey(api);
 
+log("node: [" + (nodeResource ? "有值" : "") + "]");
 log("ua: [" + String(ua || "") + "]");
-log("node: [" + String(nodeResource || "") + "]");
 log("emoji: [" + emoji + "]");
 log("twemoji: [" + twemoji + "]");
 log("delemoji: [" + delemoji + "]");
 log("front: [" + String(front || "") + "]");
 log("behind: [" + String(behind || "") + "]");
 log("del: [" + delKeywords.join(",") + "]");
+log("replace: [" + String(replace || "") + "]");
 log("in: [" + inKeywords.join(",") + "]");
 log("out: [" + outKeywords.join(",") + "]");
-log("replace: [" + String(replace || "") + "]");
 log("gpt: [" + gpt + "]");
 log("api: [" + (apiValid ? "格式有效" : "为空或格式无效") + "]");
 
@@ -400,6 +406,12 @@ function removeEmoji(text) {
     .replace(/^[ \t]+|[ \t]+$/g, "");
 }
 
+function hasEmoji(text) {
+  return /[\uD83C-\uDBFF][\uDC00-\uDFFF]|[\u2600-\u27BF]|[#*0-9]\uFE0F?\u20E3|[\u00A9\u00AE\u203C\u2049\u2122\u2139\u3030\u303D\u3297\u3299]\uFE0F/.test(
+    String(text || "")
+  );
+}
+
 function getCountryEmoji(name) {
   var text = String(name || "").toLowerCase();
 
@@ -483,7 +495,7 @@ function processName(name) {
   }
 
   /* 2. emoji：根据节点名称添加国家或地区 Emoji。 */
-  if (enabled(emoji)) {
+  if (enabled(emoji) && !hasEmoji(result)) {
     result = getCountryEmoji(result) + " " + result;
   }
 
