@@ -13,6 +13,8 @@ hostname = shopapi.io.mi.com,api.m.mi.com,shop-api.retail.mi.com
 # 小米有品
 # 开屏广告
 ^https:\/\/shopapi\.io\.mi\.com\/mtop\/mf\/resource\/homePage\/pageConfig response-body-json-del data.splashConfigs
+# 首页右边浮窗
+request if ${url} ~= /^https:\/\/shopapi\.io\.mi\.com\/mtop\/mf\/reach\/resource/i then reject_dict(200)
 # tab栏中间AI、首页快捷icon下面广告
 # '(.data.homepage.floors) |= map(select(.floor_id != 305150))' 
 https://shopapi.io.mi.com/homepage/main/v1005 response-body-json-jq '(.data.homepage.floors) |= map(select(.floor_id != 305150))'
