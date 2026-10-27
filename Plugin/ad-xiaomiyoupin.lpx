@@ -11,6 +11,8 @@ hostname = shopapi.io.mi.com,api.m.mi.com,shop-api.retail.mi.com
 
 [Rewrite]
 # 小米有品
+# 开屏广告
+^https:\/\/shopapi\.io\.mi\.com\/mtop\/mf\/resource\/homePage\/pageConfig response-body-json-del data.splashConfigs
 # tab栏中间AI、首页快捷icon下面广告
 # '(.data.homepage.floors) |= map(select(.floor_id != 305150))' 
 https://shopapi.io.mi.com/homepage/main/v1005 response-body-json-jq '(.data.homepage.floors) |= map(select(.floor_id != 305150))'
@@ -29,18 +31,25 @@ https://shopapi.io.mi.com/homepage/main/v1005 response-body-json-jq '(.data.home
 ^https:\/\/shopapi\.io\.mi\.com\/mtop\/arch\/metis\/personalRec reject-dict
 # 我的页面中间滚动横幅
 ^https:\/\/shopapi\.io\.mi\.com\/mtop\/market\/usercenter\/detail\/v1002 response-body-json-jq 'del(.data.floors[] | select(.floorKey == "BANNER"))'
-# 开屏广告
-^https:\/\/shopapi\.io\.mi\.com\/mtop\/mf\/resource\/homePage\/pageConfig response-body-json-del data.splashConfigs
+
 
 # 小米商城
 # 开屏
 request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/mishop\/splash/i then reject_dict(200)
-# 右边中间小浮窗
+# 首页精简
+response if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/mf\/home\/v1\/index/i then response.json.jq(".data.floors |= map(select(.floorId == 290519 or .floorId == 261182 or .floorId == 272265))")
+# 首页右边中间小浮窗
 request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/mishop\/homePage\/pendant/i then reject_dict(200)
 # 首页弹窗
 request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/shop\/resourceAms/i then reject_dict(200)
 # 精选推荐（首页放行）
 request if ${url} ~= /https:\/\/shop-api\.retail\.mi\.com\/mtop\/mf\/(cart|personal)\/recommend/i then reject_dict(200)
+# 搜索页面横幅
+request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/act\/mishopSearch\/getBeforePageBanners/i then reject_dict(200)
+# 搜索页面热销
+request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/act\/mishopSearch\/getHotSearchRank/i then reject_dict(200)
+# 搜索页面热词
+request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/act\/mishopSearch\/discovery/i then reject_dict(200)
 # 我的页面精选好物
 request if ${url} ~= /^https:\/\/api\.m\.mi\.com\/v1\/home\/page_feed/i then reject_dict(200)
 # 我的页面横幅
