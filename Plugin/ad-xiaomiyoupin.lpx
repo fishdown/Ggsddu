@@ -39,7 +39,7 @@ request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel
 request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/mishop\/homePage\/pendant/i then reject_dict(200)
 # 首页弹窗
 request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/shop\/resourceAms/i then reject_dict(200)
-# 精选推荐
+# 精选推荐（首页放行）
 request if ${url} ~= /https:\/\/shop-api\.retail\.mi\.com\/mtop\/mf\/(cart|personal)\/recommend/i then reject_dict(200)
 # 我的页面精选好物
 request if ${url} ~= /^https:\/\/api\.m\.mi\.com\/v1\/home\/page_feed/i then reject_dict(200)
