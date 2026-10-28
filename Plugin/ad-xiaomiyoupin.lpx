@@ -46,6 +46,8 @@ request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel
 request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/shop\/resourceAms/i then reject_dict(200)
 # 精选推荐（首页放行）
 request if ${url} ~= /https:\/\/shop-api\.retail\.mi\.com\/mtop\/mf\/(cart|personal)\/recommend/i then reject_dict(200)
+# 搜索框热词
+request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/act\/mishopSearch\/searchInput/i then reject_dict(200)
 # 搜索页面横幅
 request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/act\/mishopSearch\/getBeforePageBanners/i then reject_dict(200)
 # 搜索页面热销
