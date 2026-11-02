@@ -39,7 +39,7 @@ https://shopapi.io.mi.com/homepage/main/v1005 response-body-json-jq '(.data.home
 # 开屏
 request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/mishop\/splash/i then reject_dict(200)
 # 首页精简
-response if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/mf\/home\/v1\/index/i then response.json.jq(".data.floors |= map(select(.floorId == 290519 or .floorId == 261182 or .floorId == 272265))")
+#response if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/mf\/home\/v1\/index/i then response.json.jq(".data.floors |= map(select(.floorId == 290519 or .floorId == 261182 or .floorId == 272265))")
 # 首页右边中间小浮窗
 request if ${url} ~= /^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/skywheel\/mishop\/homePage\/pendant/i then reject_dict(200)
 # 首页弹窗
