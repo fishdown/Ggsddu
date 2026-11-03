@@ -14,16 +14,16 @@
 [Argument]
 node = input,"",tag=批量导入本地节点,desc=URL填用不到的地址；例：https://www.baidu.com；这条是input，点开粘贴节点；不处理本地节点，保持这条为空
 ua = input,"Loon",tag=拉取节点UA,desc=自定义；默认为Loon；拉取失败触发二次拉取节点才会带上ua
-emoji = switch,false,tag=节点名添加emoji,desc= 已存在不会重复添加
-twemoji = switch,false,tag=节点名处理台湾emoji
-delemoji = switch,false,tag=节点名删除emoji
-front = input,"",tag=⬇️节点名称,desc= 前面；关键字添加
-behind = input,"",tag=节点名称⬇️,desc= 关键字添加；后面
-del = input,"",tag=节点名称,desc=关键字删除；支持多个，英文逗号隔开；区分大小写
-replace = input,"",tag=节点名称,desc=关键字替换；例：tw#台湾,香港#HK #连接，#后面替换前面，支持多个，英文逗号隔开；区分大小写
+emoji = switch,false,tag=节点名 - 添加emoji,desc= 已存在不会重复添加
+twemoji = switch,false,tag=节点名 - 处理台湾emoji
+delemoji = switch,false,tag=节点名 - 删除emoji
+front = input,"",tag=节点名 - 前面添加关键字
+behind = input,"",tag=节点名 - 后面添加关键字
+del = input,"",tag=节点名 - 删除关键字,desc=支持多个，英文逗号隔开；区分大小写
+replace = input,"",tag=节点名 - 替换关键字,desc=例：tw#台湾,香港#HK #连接，#后面替换前面，支持多个，英文逗号隔开；区分大小写
 in = input,"",tag=保留节点,desc=关键字；支持多个，英文逗号隔开；区分大小写
 out = input,"",tag=删除节点,desc=关键字；支持多个，英文逗号隔开；区分大小写
-gpt = switch,false,tag=GPT检测,desc=检查通过的节点会在名称后面添加[GPT]；通过检测api来判断，效果不保证🤪
+gpt = switch,false,tag=GPT检测,desc=api暂时有问题，处理不了节点传入，暂时失效功能
 timeout = input,"10",tag=脚本超时时间,desc=节点太多需延长时间，具体自测；单位为s
 enabled = switch,true,tag=脚本开关
 enabled2 = switch,false,tag=旧格式脚本开关,desc= 不支持新版脚本格式的关掉上面开关，启用这个
